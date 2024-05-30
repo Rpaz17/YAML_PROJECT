@@ -13,4 +13,4 @@ jobs:
     - name: Install eslint
       run: npm install eslint --save-dev
     - name: Lint
-      run: npx eslint (EL NOMBRE DE LA UNICA CLASE DE JAVASCRIPT QUE USAS EN TU CODIGO).js --no-config-lookup
+      run: npx eslint backup.js --no-config-lookup
