@@ -14,3 +14,14 @@ jobs:
       run: npm install eslint --save-dev
     - name: Lint
       run: npx eslint backup.js --no-config-lookup
+  deploy:
+    needs:
+      - lint
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v4
+    - name: Deploy educational content
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.ymlstuffts }} 
+        publish_dir: ./dist
