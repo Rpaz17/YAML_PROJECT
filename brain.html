@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,8 +37,20 @@
 <body>
     <div class="counter-container">
         <span id="counter">0</span>
-        <button onclick="decrement()">-</button>
-        <button onclick="increment()">+</button>
+        <script>
+            let counter = 0;
+            const counterElement = document.getElementById('counter');
+            const increment = () => {
+                counter++;
+                counterElement.innerText = counter;
+            }
+            const decrement = () => {
+                counter--;
+                counterElement.innerText = counter;
+            }
+        </script>
+        <button onclick=decrement()>-</button>
+        <button onclick=increment()>+</button>
     </div>
     <script src="script.js"></script>
 </body>

@@ -9,3 +9,4 @@ function decrement() {
     count--;
     document.getElementById('counter').innerText = count;
 }
+module.exports = count;
