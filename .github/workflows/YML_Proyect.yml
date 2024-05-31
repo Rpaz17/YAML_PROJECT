@@ -14,6 +14,18 @@ jobs:
       run: npm install eslint --save-dev
     - name: Lint
       run: npx eslint backup.js --no-config-lookup
+  smoke-test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm install
+    - name: Run smoke tests
+      run: npm test
   deploy:
     needs:
       - lint
